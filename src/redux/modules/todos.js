@@ -41,16 +41,14 @@ export function deleteTodo(todo_id) {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
 
-    case "todo/CREATE": {
+    case CREATE: {
       const new_todo_list = [...state.list, action.todo];
-      console.log(new_todo_list);
       return { ...state, list: new_todo_list };
     }
 
-      case "todo/UPDATE": {
+      case UPDATE: {
         const new_todo_list = state.list.map((cur) => {
            if(parseInt(action.todo_id) === cur.id){
-            console.log(cur.isDone)
             return{...cur, isDone: !cur.isDone };
             }else{
                 return cur;
@@ -59,10 +57,8 @@ const reducer = (state = initialState, action) => {
         return {list: new_todo_list}
     }
 
-    case "todo/DELETE": {
+    case DELETE: {
       const new_todo_list = state.list.filter((cur) => {
-
-        console.log(parseInt(action.todo_id) !== cur.id, parseInt(action.todo_id), cur.id)
         return parseInt(action.todo_id) !== cur.id;
       });
 

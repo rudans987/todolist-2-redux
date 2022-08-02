@@ -18,7 +18,7 @@ const Detail = ()=>{
             <h2>{todo.title}</h2>
             <div>{todo.body}</div>
             <button onClick={() => {
-                navigate("/");
+                navigate(-1);
             }}>
                 이전으로
             </button>

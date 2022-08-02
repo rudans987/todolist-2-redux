@@ -6,8 +6,6 @@ import { useDispatch} from "react-redux";
 import {deleteTodo, updateTodo} from "../redux/modules/todos";
 const Todo = ({ todo})=> {
   const navigate = useNavigate();
-  
-
   const dispatch = useDispatch();
   return (
     <TodoContainer>
