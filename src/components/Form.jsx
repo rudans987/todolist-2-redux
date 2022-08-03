@@ -11,6 +11,9 @@ const Form=()=> {
   const [count, setCount] =useState(2)
   const onSubmitHandler = (event) => {
     event.preventDefault();
+    if(title.current.value ===""|| body.current.value===""){
+      return alert("값이 비어있어요!");
+    }
     dispatch(createTodo({
       id: count, 
       title : title.current.value, 
