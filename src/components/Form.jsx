@@ -1,29 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {useDispatch} from "react-redux";
-import {createTodo} from "../redux/modules/todos";
+import { useDispatch } from "react-redux";
+import { createTodo } from "../redux/modules/todos";
 
-const Form=()=> {
+const Form = () => {
   const title = React.useRef(null);
   const body = React.useRef(null);
   const dispatch = useDispatch();
- 
-  const [count, setCount] =useState(2)
+
+  const [count, setCount] = useState(2)
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    if(title.current.value ===""|| body.current.value===""){
+    if (title.current.value === "" || body.current.value === "") {
       return alert("값이 비어있어요!");
     }
     dispatch(createTodo({
-      id: count, 
-      title : title.current.value, 
-      body: body.current.value, 
+      id: count,
+      title: title.current.value,
+      body: body.current.value,
       isDone: false
     }));
 
-    setCount((cur)=>cur+1);
-    title.current.value="";
-    body.current.value="";
+    setCount((cur) => cur + 1);
+    title.current.value = "";
+    body.current.value = "";
   };
 
 
@@ -32,7 +32,7 @@ const Form=()=> {
       <InputBoxes>
         <FormLabel className="form-label">제목</FormLabel>
         <InputTitle
-          type="text" 
+          type="text"
           ref={title}
           name="title"
         />

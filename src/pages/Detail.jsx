@@ -13,17 +13,16 @@ const Detail = ()=>{
    
     const todo = todo_list.find(cur=>cur.id === Number(params.id))
     return(
-        <DetailBox>
+              <DetailBox>
             <div>id:{todo.id}</div>
             <h2>{todo.title}</h2>
             <div>{todo.body}</div>
-            <button onClick={() => {
+            <Button onClick={() => {
                 navigate(-1);
             }}>
                 이전으로
-            </button>
+            </Button>
         </DetailBox>
-
     )
 }
 
@@ -33,8 +32,20 @@ const DetailBox = styled.div`
     height: 200px;
     margin: 200px auto;
     border-radius: 10px;
-    text-align: center;
     vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 `;
+
+
+
+const Button = styled.button`
+    width: 80px;
+    margin-top: 20px;
+`
+
+
+
 
 export default Detail;

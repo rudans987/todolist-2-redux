@@ -11,16 +11,22 @@ const App=()=> {
 
 
  
-  return (<Background className="App">
-      <Routes>
-          <Route path="/" element={<TodoList />}/>          
+  return (
+    <Background>
+      <Routes>       
+         <Route path="/" element={<TodoList />}/>          
           <Route path="/detail/:id" element={<Detail />}/>
         </Routes>
-    </Background>)
+        </Background>
+    )
 }
 
-
-const Background = styled.div`
+const Background = styled.body`
+position: absolute;
+  top: 0;
+  left: 0;
+width:100%;
+height: 100%;
 background-color: #0080ff;
 `;
 
